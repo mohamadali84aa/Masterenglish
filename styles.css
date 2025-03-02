@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    direction: rtl;
+    background: #f4f7fa;
+    color: #333;
+}
+
+/* هدر */
+.hero-section {
+    height: 100vh;
+    background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 102, 204, 0.3);
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in;
+}
+
+.cta-buttons .btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: transform 0.3s;
+}
+
+.btn-primary {
+    background: #ff7043;
+    color: #fff;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* اسلایدر */
+.featured-courses {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.featured-courses h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.course-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.course-card:hover {
+    transform: scale(1.05);
+}
+
+.course-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.course-card h3 {
+    margin: 10px 0;
+}
+
+.course-card p {
+    color: #666;
+}
+
+/* چرا ما */
+.why-us {
+    background: #e3f2fd;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.why-us h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-us-item {
+    padding: 20px;
+}
+
+.why-us-item .icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
