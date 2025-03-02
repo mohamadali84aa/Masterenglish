@@ -12,13 +12,14 @@
     <!-- Progress Bar -->
     <div class="progress-bar"></div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Particles -->
     <header class="hero">
         <div id="particles-js" class="hero-particles"></div>
         <nav>
             <div class="logo">Master English</div>
             <ul>
                 <li><a href="#courses">Courses</a></li>
+                <li><a href="#resources">Resources</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -31,38 +32,77 @@
         </div>
     </header>
 
-    <!-- Courses Section -->
+    <!-- Courses Section with Flip Cards -->
     <section class="courses" id="courses">
-    <h2>Our Courses</h2>
-    <div class="course-container">
-        <div class="course-card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="course-img" style="background-image: url('course1.jpg');"></div>
-                    <h3>English Essentials</h3>
+        <h2>Our Courses</h2>
+        <div class="course-container">
+            <div class="course-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>English Essentials</h3>
+                        <div class="course-img" style="background-image: url('course1.jpg');"></div>
+                    </div>
+                    <div class="card-back">
+                        <p>Key Lessons: Grammar, Vocabulary</p>
+                        <video src="preview1.mp4" muted autoplay loop></video>
+                    </div>
                 </div>
-                <div class="card-back">
-                    <h3>Preview</h3>
-                    <p>Key Lessons: Grammar Basics, Everyday Vocabulary</p>
-                    <a href="#" class="course-cta">Join - $25</a>
+            </div>
+            <div class="course-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>Pro Conversations</h3>
+                        <div class="course-img" style="background-image: url('course2.jpg');"></div>
+                    </div>
+                    <div class="card-back">
+                        <p>Key Skills: Speaking, Listening</p>
+                        <video src="preview2.mp4" muted autoplay loop></video>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="course-card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="course-img" style="background-image: url('course2.jpg');"></div>
-                    <h3>Pro Conversations</h3>
-                </div>
-                <div class="card-back">
-                    <h3>Preview</h3>
-                    <p>Key Lessons: Business English, Fluency Tips</p>
-                    <a href="#" class="course-cta">Join - $45</a>
-                </div>
+    </section>
+
+    <!-- Resources Section with Hover Previews -->
+    <section class="resources" id="resources">
+        <h2>Free Resources</h2>
+        <div class="resource-container">
+            <div class="resource" data-preview="Learn 50 common phrases to boost your fluency.">
+                <span>Phrases PDF</span>
+                <div class="preview-tooltip"></div>
+            </div>
+            <div class="resource" data-preview="Quick tips for better pronunciation.">
+                <span>Pronunciation Guide</span>
+                <div class="preview-tooltip"></div>
             </div>
         </div>
-   </div>
-</section>
+    </section>
+
+    <!-- About Section with Animated Timeline -->
+    <section class="about" id="about">
+        <h2>About Us</h2>
+        <div class="timeline">
+            <div class="milestone" data-year="2015">Founded Master English</div>
+            <div class="milestone" data-year="2020">Reached 100K Students</div>
+            <div class="milestone" data-year="2025">Launched New Platform</div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Animated Form -->
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <button type="submit" class="submit-btn">Send</button>
+        </form>
+    </section>
 
     <!-- Footer -->
     <footer>
