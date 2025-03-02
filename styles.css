@@ -134,47 +134,80 @@ nav a:hover {
 }
 
 .course-card {
-    background: #FFF;
-    border-radius: 20px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    perspective: 1000px; /* Creates 3D space for flip */
+    height: 400px; /* Fixed height for consistency */
 }
 
-.course-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d; /* Enables 3D flip */
+    background: #FFF;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.course-card:hover .card-inner {
+    transform: rotateY(180deg); /* Flips on hover */
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back when facing away */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.card-front {
+    background: #FFF;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #1E293B, #0EA5E9); /* Matches hero gradient */
+    color: #FFF;
+    transform: rotateY(180deg); /* Starts flipped */
 }
 
 .course-img {
     height: 200px;
+    width: 100%;
     background-size: cover;
     background-position: center;
+    border-radius: 10px 10px 0 0;
 }
 
-.course-card h3 {
+.card-front h3, .card-back h3 {
     font-size: 1.6rem;
-    margin: 20px 0 10px;
-    padding: 0 20px;
+    margin: 20px 0;
 }
 
-.course-card p {
-    color: #64748B; /* Slate gray */
-    padding: 0 20px;
+.card-back p {
     font-size: 1rem;
+    margin-bottom: 20px;
 }
 
 .course-cta {
     display: inline-block;
-    margin: 20px;
     padding: 10px 25px;
-    background: linear-gradient(90deg, #0EA5E9, #1E293B);
+    background: linear-gradient(90deg, #14B8A6, #5EEAD4);
     color: #FFF;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    transition: background 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
+.course-cta:hover {
+    transform: scale(1.1);
+}
 .course-cta:hover {
     background: linear-gradient(90deg, #1E293B, #0EA5E9);
 }
