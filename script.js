@@ -8,27 +8,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-document.querySelectorAll('.course-card').forEach(card => {
-    card.addEventListener('click', () => {
-        card.querySelector('.card-inner').classList.toggle('flipped');
-    });
-});
-
 // Dynamic greeting message
 const greeting = document.getElementById('greeting');
 const hour = new Date().getHours();
-let message;
-if (hour < 12) {
-    message = 'Good morning!';
-} else if (hour < 18) {
-    message = 'Good afternoon!';
-} else {
-    message = 'Good evening!';
-}
-greeting.textContent = message;
+greeting.textContent = hour < 12 ? 'Good morning!' : hour < 18 ? 'Good afternoon!' : 'Good evening!';
 
 // Scroll progress bar
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', () => {
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrolled = (winScroll / height) * 100;
@@ -39,7 +25,7 @@ window.addEventListener('scroll', function() {
 particlesJS('particles-js', {
     particles: {
         number: { value: 40, density: { enable: true, value_area: 800 } },
-        color: { value: '#5EEAD4' }, // Matches teal theme
+        color: { value: '#5EEAD4' },
         shape: { type: 'circle' },
         opacity: { value: 0.5, random: false },
         size: { value: 3, random: true },
@@ -52,4 +38,19 @@ particlesJS('particles-js', {
         modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
     },
     retina_detect: true
+});
+
+// Resource preview tooltips
+document.querySelectorAll('.resource').forEach(resource => {
+    const tooltip = resource.querySelector('.preview-tooltip');
+    tooltip.textContent = resource.dataset.preview;
+});
+
+// About timeline animation
+window.addEventListener('scroll', () => {
+    document.querySelectorAll('.milestone').forEach(m => {
+        if (m.getBoundingClientRect().top < window.innerHeight * 0.8) {
+            m.classList.add('visible');
+        }
+    });
 });
