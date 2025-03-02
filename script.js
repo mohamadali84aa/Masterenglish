@@ -8,6 +8,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+document.querySelectorAll('.course-card').forEach(card => {
+    card.addEventListener('click', () => {
+        card.querySelector('.card-inner').classList.toggle('flipped');
+    });
+});
+
 // Dynamic greeting message
 const greeting = document.getElementById('greeting');
 const hour = new Date().getHours();
