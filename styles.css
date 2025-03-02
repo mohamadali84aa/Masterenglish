@@ -149,8 +149,8 @@ nav a:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.course-card:hover .card-inner {
-    transform: rotateY(180deg); /* Flips on hover */
+.course-card .card-inner.flipped {
+    transform: rotateY(180deg);
 }
 
 .card-front, .card-back {
