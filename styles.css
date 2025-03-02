@@ -160,6 +160,11 @@ nav a:hover {
 
 .card-back {
     transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .course-img {
@@ -168,14 +173,12 @@ nav a:hover {
     background-position: center;
 }
 
-.card-front h3, .card-back p {
+.card-front h3 {
     padding: 20px;
 }
 
-.card-back video {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
+.card-back p {
+    padding: 10px;
 }
 
 /* Resources Section */
@@ -209,7 +212,7 @@ nav a:hover {
 .preview-tooltip {
     display: none;
     position: absolute;
-    top: -60px;
+    bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
     background: #1E293B;
@@ -218,6 +221,7 @@ nav a:hover {
     border-radius: 5px;
     font-size: 0.9rem;
     white-space: nowrap;
+    margin-bottom: 10px;
 }
 
 .resource:hover .preview-tooltip {
@@ -250,6 +254,8 @@ nav a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: opacity 0.5s;
+    width: 200px;
+    margin: 20px;
 }
 
 .milestone.visible {
@@ -261,6 +267,7 @@ nav a:hover {
     display: block;
     font-weight: 700;
     color: #5EEAD4;
+    margin-bottom: 10px;
 }
 
 /* Contact Section */
@@ -285,14 +292,6 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
-.form-group label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    transition: transform 0.3s ease, font-size 0.3s ease;
-    color: #64748B;
-}
-
 .form-group input {
     width: 100%;
     padding: 10px;
@@ -300,10 +299,21 @@ nav a:hover {
     border-radius: 5px;
 }
 
+.form-group label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: all 0.3s ease;
+    color: #64748B;
+    pointer-events: none;
+}
+
 .form-group input:focus + label,
 .form-group input:not(:placeholder-shown) + label {
-    transform: translateY(-25px);
+    top: -20px;
+    left: 0;
     font-size: 0.8rem;
+    color: #0EA5E9;
 }
 
 .submit-btn {
